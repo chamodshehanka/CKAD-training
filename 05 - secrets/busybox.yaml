@@ -28,4 +28,14 @@ spec:
           - bin/sh
           - -c
           - "sleep 3600"
+        envFrom:
+          - secretRef:
+            name: app-password
+        volumeMounts:
+          - name: any-app
+            mountPath: /app
+      volumes:
+        - name: any-name
+          secret:
+            secretName: app-password
 status: {}
