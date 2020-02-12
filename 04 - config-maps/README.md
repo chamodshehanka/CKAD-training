@@ -20,3 +20,8 @@ kubectl apply -f org-cm.yaml
 ```
 
 _Then configmap will be created_
+
+* To view config maps
+```
+kubectl get cm
+```

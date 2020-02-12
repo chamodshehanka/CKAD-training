@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  app: demo-app
+  author: Chamod
+  country: Sri Lanka
+  domain: google.com
+  organization: Platformer
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: cm-from-env
