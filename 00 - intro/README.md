@@ -20,3 +20,7 @@ View ENV of pod
 kubectl exec <POD_NAME> env
 ```
 
+Describe a pod
+```
+kubectl describe pod/<POD_NAME>
+```
