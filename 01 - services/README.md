@@ -8,3 +8,23 @@
 4. External Name - Add CNAME DNS record to CoreDNS only
 
 ### Creating a ClusterIP Service
+```
+kubectl create deployment httpenv --image=bretfisher/httpenv  
+``` 
+
+Expose the port
+```
+kubectl expose deployment/httpenv --port 8888
+```
+
+Nodeport
+
+```
+kubectl expose deployment/httpenv --port 8888 --name httpenv-np --type NodePort
+```
+
+Load Balancer
+```
+kubectl expose deployment/httpenv --port 8888 --name httpenv-lb --type LoadBalancer
+```
+
