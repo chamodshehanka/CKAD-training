@@ -1,1 +1,1 @@
-# CKAD Training
+# Certified Kubernetes Application Development Training
