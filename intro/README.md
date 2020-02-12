@@ -14,3 +14,9 @@ kubectl scale deploy/my-apache —replicas 2
 
 kubectl s
 ```
+
+View ENV of pod
+```
+kubectl exec <POD_NAME> env
+```
+
