@@ -21,4 +21,11 @@ spec:
       - image: busybox
         name: busybox
         resources: {}
+        # To keep container running on K8s
+        # or else below line also fine
+        # command: ["/bin/sh", "-ec", "sleep 3600"]
+        command: 
+          - bin/sh
+          - -c
+          - "sleep 3600"
 status: {}
