@@ -19,14 +19,14 @@ spec:
     spec:
       containers:
       - image: busybox
-        name: busybox
+        name: hello-app
         resources: {}
         command: ["/bin/sh", "-c", "mkdir -p /app && echo 'hello-word from container-1' > /app/data.log && sleep 3600"]
         volumeMounts:
           - name: data-dir
             mountPath: /app
       - image: busybox
-        name: busybox
+        name: read-hello
         resources: {}
         command: ["/bin/sh", "-c", "tail -f /var/data/data.log"]
         volumeMounts:
