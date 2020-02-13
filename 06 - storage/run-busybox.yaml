@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    run: busybox
+  name: busybox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: busybox
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        run: busybox
+    spec:
+      containers:
+      - image: busybox
+        name: busybox
+        resources: {}
+status: {}
