@@ -24,3 +24,12 @@ Describe a pod
 ```
 kubectl describe pod/<POD_NAME>
 ```
+
+Delete pods permenently
+```
+# View all namespaces
+kubectl get deployments --all-namespaces
+
+# Then delete deployement one by one
+kubectl delete -n <NAMESPACE> deployment <DEPLOYMENT>
+```

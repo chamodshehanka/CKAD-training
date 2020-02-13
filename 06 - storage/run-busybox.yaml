@@ -6,7 +6,7 @@ metadata:
     run: busybox
   name: busybox
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       run: busybox
@@ -21,4 +21,19 @@ spec:
       - image: busybox
         name: busybox
         resources: {}
+        command: ["/bin/sh", "-c", "mkdir -p /app && echo 'hello-word from container-1' > /app/data.log && sleep 3600"]
+        volumeMounts:
+          - name: data-dir
+            mountPath: /app
+      - image: busybox
+        name: busybox
+        resources: {}
+        command: ["/bin/sh", "-c", "tail -f /var/data/data.log"]
+        volumeMounts:
+          - name: data-dir
+            mountPath: /var/data
+      volumes:
+        - name: data-dir
+          emptyDir: {}
+      
 status: {}
